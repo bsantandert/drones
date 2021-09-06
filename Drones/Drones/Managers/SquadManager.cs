@@ -59,5 +59,19 @@ namespace Drones.Managers
             }
         }
 
+        /// <summary>
+        /// Get drone trips with actual locations, empty trips are ignored
+        /// </summary>
+        /// <returns>drone trips with locations</returns>
+        public List<DroneTrip> GetDroneTrips()
+        {
+            List<DroneTrip> trips = new List<DroneTrip>();
+            foreach (List<DroneTrip> droneTrips in this.SquadTrips)
+            {
+                trips.AddRange(droneTrips.Where(dt => dt.GetLocationsCount() > 0));
+            }
+            return trips;
+        }
+
     }
 }

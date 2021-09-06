@@ -37,6 +37,15 @@ namespace Drones.Models
         }
 
         /// <summary>
+        /// Returns locations count value
+        /// </summary>
+        /// <returns></returns>
+        public int GetLocationsCount()
+        {
+            return _locations.Count;
+        }
+
+        /// <summary>
         /// Return total weight of locations
         /// </summary>
         /// <returns></returns>
