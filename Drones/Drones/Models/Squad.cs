@@ -34,6 +34,21 @@ namespace Drones.Models
         }
 
         /// <summary>
+        /// Add List of drones validating the limit
+        /// </summary>
+        /// <param name="drone"></param>
+        /// <returns></returns>
+        public bool AddDrones(List<Drone> drones)
+        {
+            if ((this.Drones.Count + drones.Count) < this.MaxSize)
+            {
+                this.Drones.AddRange(drones);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Get list of drones
         /// </summary>
         /// <returns></returns>

@@ -25,15 +25,18 @@ namespace DronesApp
             {
                 if (File.Exists(filePath))
                 {
-                    Reseller onlineReseller = new Reseller("Online Reseller");
                     IDataSource fileSource = new FileSource(filePath);
                     InputData data = fileSource.ReadData();
 
                     if (data.Drones.Count > 0 && data.Locations.Count > 0)
                     {
+                        // some model usage for drones, squads and reseller
+                        Reseller onlineReseller = new Reseller("Online Reseller");
+                        var resellerSquad = new Squad() { MaxSize = 100 };
+                        resellerSquad.AddDrones(data.Drones);
+
                         var droneTrips = DeliverySolverHelper.GetDeliveryDistribution(data.Drones, data.Locations);
                         DronePrinterHelper.PrintDeliveryResults(data.Drones, droneTrips);
-                        Console.ReadKey();
                     }
                     else
                     {
@@ -44,6 +47,7 @@ namespace DronesApp
                 {
                     Console.WriteLine(Constants.FILE_NOT_FOUND_MESSAGE);
                 }
+                Console.ReadKey();
             }
             catch (Exception ex)
             {
