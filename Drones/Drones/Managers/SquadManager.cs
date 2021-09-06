@@ -23,6 +23,7 @@ namespace Drones.Managers
         /// <param name="maxTrips">max possible trips</param>
         public void GenerateMaxSquadTrips(List<Drone> drones, int maxTrips)
         {
+            this.SquadTrips.Clear();
             for (int i = 0; i < maxTrips; i++)
             {
                 var droneTrips = drones

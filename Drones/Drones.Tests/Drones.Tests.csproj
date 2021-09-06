@@ -53,6 +53,7 @@
     <Compile Include="FileSourceTest.cs" />
     <Compile Include="DroneParserTest.cs" />
     <Compile Include="LocationParserTest.cs" />
+    <Compile Include="SquadManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
