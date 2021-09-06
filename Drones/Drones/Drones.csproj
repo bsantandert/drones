@@ -41,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDataSource.cs" />
+    <Compile Include="Models\Drone.cs" />
+    <Compile Include="Models\InputData.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Reseller.cs" />
+    <Compile Include="Models\Squad.cs" />
+    <Compile Include="Models\Trip.cs" />
+    <Compile Include="Parsers\DroneParser.cs" />
+    <Compile Include="Parsers\LocationParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\FileSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
