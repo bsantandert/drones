@@ -33,12 +33,12 @@ namespace DronesApp
                     {
                         var droneTrips = DeliverySolverHelper.GetDeliveryDistribution(data.Drones, data.Locations);
                         DronePrinterHelper.PrintDeliveryResults(data.Drones, droneTrips);
+                        Console.ReadKey();
                     }
                     else
                     {
                         Console.WriteLine(Constants.DATA_NOT_FOUND_MESSAGE);
                     }
-
                 }
                 else
                 {
