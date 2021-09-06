@@ -18,6 +18,7 @@ namespace Drones.Managers
 
         /// <summary>
         /// Generates a list of list of drone trips with only drones info
+        /// using decreasing order in drones to improve algorithm 
         /// </summary>
         /// <param name="drones">drones available</param>
         /// <param name="maxTrips">max possible trips</param>

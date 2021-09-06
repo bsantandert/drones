@@ -3,6 +3,7 @@ using Drones.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace Drones.Tests
 {
@@ -53,6 +54,23 @@ namespace Drones.Tests
             Assert.AreEqual(2, droneTrips2.Count);
             Assert.AreEqual("Drone 3", droneTrips2[0].GetDrone().Name);
             Assert.AreEqual("Drone 3", droneTrips2[1].GetDrone().Name);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "Location weight is higher than all drones")]
+        public void LocationHigherThanDrones()
+        {
+            List<Drone> drones = new List<Drone>();
+            drones.Add(new Drone("Drone 1", 20));
+            drones.Add(new Drone("Drone 2", 80));
+            drones.Add(new Drone("Drone 3", 250));
+
+            List<Location> locations = new List<Location>();
+            locations.Add(new Location("Location 1", 150));
+            locations.Add(new Location("Location 2", 300));
+            locations.Add(new Location("Location 3", 50));
+
+            DeliverySolverHelper.GetDeliveryDistribution(drones, locations);
         }
     }
 }
