@@ -36,6 +36,9 @@ namespace Drones.Tests
             source3 = new FileSource(inputFilePath3);
         }
 
+        /// <summary>
+        /// Proper data read validation
+        /// </summary>
         [TestMethod]
         public void ReadProperData()
         {
@@ -48,6 +51,9 @@ namespace Drones.Tests
             Assert.AreEqual(7, data2.Locations.Count);
         }
 
+        /// <summary>
+        /// Wrong data read validation
+        /// </summary>
         [TestMethod]
         public void ReadWrongData()
         {
