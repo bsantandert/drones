@@ -19,7 +19,7 @@ namespace Drones.Tests
         }
 
         /// <summary>
-        /// Initialize files configuration
+        /// Initialize drone parser
         /// </summary>
         [TestInitialize]
         public void Setup()
@@ -44,7 +44,7 @@ namespace Drones.Tests
         }
 
         /// <summary>
-        /// Empty list returned because of bad data
+        /// Empty list returned because of wrong data
         /// </summary>
         [TestMethod]
         public void ParseWrongData()
@@ -60,7 +60,7 @@ namespace Drones.Tests
 
         [TestMethod]
         [ExpectedException(typeof(FormatException), "Drone weight is not a number")]
-        public void NullUserIdInConstructor()
+        public void ParseWrongFormatData()
         {
             string[] data = new string[4] { "Drone 1", "160", "Drone 2", "not a number" };
             droneParser.Parse(data);
