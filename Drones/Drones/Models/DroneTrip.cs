@@ -22,6 +22,15 @@ namespace Drones.Models
         }
 
         /// <summary>
+        /// Returns current drone;
+        /// </summary>
+        /// <returns></returns>
+        public Drone GetDrone()
+        {
+            return _drone;
+        }
+
+        /// <summary>
         /// Adds a location to the list of locations, validates if there is available space
         /// </summary>
         /// <param name="location"></param>
@@ -43,6 +52,15 @@ namespace Drones.Models
         public int GetLocationsCount()
         {
             return _locations.Count;
+        }
+
+        /// <summary>
+        /// Returns all locations
+        /// </summary>
+        /// <returns></returns>
+        public List<Location> GetLocations()
+        {
+            return _locations;
         }
 
         /// <summary>

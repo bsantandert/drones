@@ -52,6 +52,7 @@
     <Compile Include="Parsers\DroneParser.cs" />
     <Compile Include="Parsers\LocationParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\DeliverySolverHelper.cs" />
     <Compile Include="Sources\FileSource.cs" />
   </ItemGroup>
   <ItemGroup />
