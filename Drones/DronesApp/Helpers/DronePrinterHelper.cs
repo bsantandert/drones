@@ -29,13 +29,11 @@ namespace DronesApp.Helpers
                     for (int i = 0; i < currentDroneTrips.Count; i++)
                     {
                         Console.WriteLine($"Trip #{i+1}");
-                        StringBuilder droneTripString = new StringBuilder();
-                        foreach (var location in currentDroneTrips[i].GetLocations())
-                        {
-                            droneTripString.Append($"{location.ToString()},"); 
-                        }
-                        Console.WriteLine(droneTripString);
+                        var currentDroneTripLocations = currentDroneTrips[i].GetLocations().Select(l => l.ToString()).ToArray();
+                        string joinedLocationString = string.Join(",", currentDroneTripLocations);
+                        Console.WriteLine(joinedLocationString);
                     }
+                    Console.WriteLine();
                 }
             }
         }

@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace Drones.Tests
 {
+    /// <summary>
+    /// Test on Squad Manager
+    /// </summary>
     [TestClass]
     public class SquadManagerTest
     {
