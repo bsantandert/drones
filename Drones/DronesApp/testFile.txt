@@ -1,0 +1,9 @@
+drone 1, 120,drone 2, 180,drone 3, 500,drone 4, 600
+Bolivia, 200
+Colombia, 300
+Peru, 150
+Ecuador, 300
+Panama, 100
+USA, 550
+Mexico, 490
+Italy, 480
